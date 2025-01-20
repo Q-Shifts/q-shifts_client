@@ -19,17 +19,17 @@ export default function AsideItem({
   };
 
   return (
-    <>
-      <a
-        className={`block py-18 px-24 rounded-l-16 text-16 mb-8 ${
-          isActive ? "bg-blue-normal text-white font-semibold hover:bg-blue-normal-hover" : "text-primary-gray"
-        }`}
-        href="#"
-        onClick={onClickHandle}
-      >
-        {icon}
-        {children}
-      </a>
-    </>
+    <a
+      className={`block py-18 px-24 rounded-l-16 text-16 mb-8 ${
+        isActive
+          ? "bg-blue-normal text-white font-semibold hover:bg-blue-normal-hover"
+          : "text-primary-gray"
+      }`}
+      href="#"
+      onClick={onClickHandle}
+    >
+      {icon}
+      {children}
+    </a>
   );
 }
