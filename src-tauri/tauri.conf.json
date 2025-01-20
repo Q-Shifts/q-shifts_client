@@ -12,6 +12,8 @@
   "app": {
     "windows": [
       {
+        "maximized": true,
+        "resizable": true,
         "title": "q-shifts",
         "width": 800,
         "height": 600
