@@ -20,7 +20,7 @@ export default function AsideItem({
 
   return (
     <a
-      className={`block py-18 px-24 rounded-l-16 text-16 mb-8 ${
+      className={`flex gap-[16px] py-18 px-24 rounded-l-16 text-16 mb-8 ${
         isActive
           ? "bg-blue-normal text-white font-semibold hover:bg-blue-normal-hover"
           : "text-primary-gray"

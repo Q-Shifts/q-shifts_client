@@ -1,15 +1,42 @@
 import { useState } from "react";
 import AsideItem from "./AsideItem";
+import HomeIcon from "~/assets/icons/home.svg?react";
+import CalenderOutline from "~/assets/icons/calendar-outline.svg?react";
+import DocumentsLinear from "~/assets/icons/documents-linear.svg?react";
+import NotificationIcon from "~/assets/icons/notification.svg?react";
+import SupportIcon from "~/assets/icons/support.svg?react";
+import SettingsIcon from "~/assets/icons/setting-outline.svg?react";
 
 export default function Aside() {
   const [activeItem, setActiveItem] = useState("Dashboard"); // TODO:
   const navLinks = [
-    "Dashboard",
-    "Shift Planning",
-    "My Documents",
-    "Notifications"
+    {
+      label: "Dashboard",
+      icon: <HomeIcon />
+    },
+    {
+      label: "Shift Planning",
+      icon: <CalenderOutline />
+    },
+    {
+      label: "My Documents",
+      icon: <DocumentsLinear />
+    },
+    {
+      label: "Notifications",
+      icon: <NotificationIcon />
+    }
   ];
-  const bottomNavLinks = ["Support", "Settings"];
+  const bottomNavLinks = [
+    {
+      label: "Support",
+      icon: <SupportIcon />
+    },
+    {
+      label: "Settings",
+      icon: <SettingsIcon />
+    }
+  ];
 
   const onRouteChange = (to: string) => {
     setActiveItem(to);
@@ -21,11 +48,12 @@ export default function Aside() {
       <div className="mt-32">
         {navLinks.map(item => (
           <AsideItem
-            onClick={() => onRouteChange(item)}
-            isActive={item === activeItem}
-            key={item}
+            onClick={() => onRouteChange(item.label)}
+            isActive={item.label === activeItem}
+            key={item.label}
+            icon={item.icon}
           >
-            {item}
+            {item.label}
           </AsideItem>
         ))}
       </div>
@@ -33,11 +61,12 @@ export default function Aside() {
       <div>
         {bottomNavLinks.map(item => (
           <AsideItem
-            onClick={() => onRouteChange(item)}
-            isActive={item === activeItem}
-            key={item}
+            onClick={() => onRouteChange(item.label)}
+            isActive={item.label === activeItem}
+            key={item.label}
+            icon={item.icon}
           >
-            {item}
+            {item.label}
           </AsideItem>
         ))}
       </div>
