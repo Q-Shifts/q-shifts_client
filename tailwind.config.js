@@ -30,10 +30,16 @@ export default {
           darker: "#1a202c"
         },
         primary: {
-          "gray": "#404040"
+          "gray": "#404040",
+          green: "#55B65B"
         },
         secondary: {
-          gray: "#B1B1B1"
+          gray: "#B1B1B1",
+        },
+        accent: {
+          gray: "#F0F0F2",
+          blue: "#E7EDFF",
+          green: "rgba(85, 182, 91, 0.14)"
         }
       },
       fontFamily: {
@@ -65,7 +71,9 @@ export default {
       },
       spacing: {
         32: "32px",
+        30: "30px",
         24: "24px",
+        25: "25px",
         26: "26px",
         18: "18px",
         16: "16px",
