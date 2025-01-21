@@ -31,6 +31,9 @@ export default {
         },
         primary: {
           "gray": "#404040"
+        },
+        secondary: {
+          gray: "#B1B1B1"
         }
       },
       fontFamily: {
