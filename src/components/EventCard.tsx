@@ -14,17 +14,20 @@ const variants = {
   orange: {
     parentClass: "bg-orange-accent border-orange-normal",
     iconClass: "text-orange-normal",
-    subtitleClass: "text-micro"
+    subtitleClass: "text-micro",
+    descriptionClass: "text-gray-dark-active"
   },
   purple: {
     parentClass: "bg-purple-accent border-purple-normal",
     iconClass: "text-purple-normal",
-    subtitleClass: "text-micro"
+    subtitleClass: "text-micro",
+    descriptionClass: "text-gray-dark-active"
   },
   default: {
     parentClass: "bg-blueGray-accent border-blueGray-normal",
     iconClass: "text-blueGray-normal",
-    subtitleClass: "text-micro"
+    subtitleClass: "text-micro",
+    descriptionClass: "text-gray-dark"
   }
 } as const;
 
@@ -36,7 +39,7 @@ export default function EventCard({
   variant,
   className
 }: Props) {
-  const { iconClass, parentClass, subtitleClass } =
+  const { iconClass, parentClass, subtitleClass, descriptionClass } =
     variants[variant || "default"];
 
   return (
@@ -48,7 +51,9 @@ export default function EventCard({
         <h4 className="text-14 mb-4">{title}</h4>
         <div className={`text-12 ${subtitleClass}`}>{subtitle}</div>
       </div>
-      <h2 className="text-14 font-medium">{description}</h2>
+      <h2 className={`text-14 font-medium ${descriptionClass}`}>
+        {description}
+      </h2>
       <DotVertical className={`w-[20px] h-[20px] ${subtitleClass}`} />
     </div>
   );
