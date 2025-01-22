@@ -36,10 +36,23 @@ export default {
         secondary: {
           gray: "#B1B1B1",
         },
+        micro: "#787878",
         accent: {
           gray: "#F0F0F2",
           blue: "#E7EDFF",
           green: "rgba(85, 182, 91, 0.14)"
+        },
+        orange: {
+          accent: "#FFA41C1A",
+          normal: "#FFA41C"
+        },
+        purple: {
+          normal: "#9E2DD3",
+          accent: "#9E2DD31A"
+        },
+        blueGray: {
+          normal: "#6C6C7F",
+          accent: "#6C6C7F1A"
         }
       },
       fontFamily: {
@@ -77,7 +90,8 @@ export default {
         26: "26px",
         18: "18px",
         16: "16px",
-        8: "8px"
+        8: "8px",
+        4: "4px"
       }
     }
   },
