@@ -1,6 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  safelist: [
+    "bg-orange-accent",
+    "border-orange-normal",
+    "text-orange-normal",
+    "bg-purple-accent",
+    "border-purple-normal",
+    "text-purple-normal",
+    "bg-blueGray-accent",
+    "border-blueGray-normal",
+    "text-blueGray-normal",
+    "text-gray-dark-active",
+    "text-gray-dark",
+    "text-micro"
+  ],
   theme: {
     extend: {
       colors: {
@@ -30,11 +44,11 @@ export default {
           darker: "#1a202c"
         },
         primary: {
-          "gray": "#404040",
+          gray: "#404040",
           green: "#55B65B"
         },
         secondary: {
-          gray: "#B1B1B1",
+          gray: "#B1B1B1"
         },
         micro: "#787878",
         accent: {
