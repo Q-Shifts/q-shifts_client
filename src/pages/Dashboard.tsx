@@ -1,6 +1,7 @@
 import BriefcaseIcon from "~/assets/icons/briefcase.svg?react";
 import PlaneSolidIcon from "~/assets/icons/clarity_plane-solid.svg?react";
 import DocumentsIcon from "~/assets/icons/documents-linear.svg?react";
+import Calendar from "~/components/Calender";
 
 const Dashboard = () => {
   const activityItems = [
@@ -37,7 +38,9 @@ const Dashboard = () => {
                 key={item.title}
                 className="flex gap-[16px] p-25 rounded-md bg-white"
               >
-                <div className={`rounded-xl ${item.className} flex justify-center items-center w-[60px] h-[60px]`}>
+                <div
+                  className={`rounded-xl ${item.className} flex justify-center items-center w-[60px] h-[60px]`}
+                >
                   {item.icon}
                 </div>
                 <div className="flex flex-col justify-center">
@@ -46,6 +49,10 @@ const Dashboard = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="rounded-md bg-white flex p-25 mt-16">
+            <Calendar />
           </div>
         </div>
       </div>
