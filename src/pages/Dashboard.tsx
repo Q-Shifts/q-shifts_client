@@ -76,8 +76,51 @@ const Dashboard = () => {
     }
   ] as const;
 
+  const leaves = [
+    {
+      description: "Medical Leave",
+      date: "18 Oct 2024",
+      status: {
+        variant: "orange",
+        label: "Pending"
+      }
+    },
+    {
+      description: "Medical Leave",
+      date: "17 Oct 2024",
+      status: {
+        variant: "success",
+        label: "Approved"
+      }
+    },
+    {
+      description: "Emergency",
+      date: "12 Aug 2024",
+      status: {
+        variant: "success",
+        label: "Approved"
+      }
+    },
+    {
+      description: "Casual Leave",
+      date: "13 Jun 2024",
+      status: {
+        variant: "success",
+        label: "Approved"
+      }
+    },
+    {
+      description: "Yearly Leave",
+      date: "12 Jun 2024",
+      status: {
+        variant: "success",
+        label: "Approved"
+      }
+    }
+  ] as const;
+
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 mb-10">
       <div className="flex gap-[16px]">
         <div className="rounded-md flex gap-16 flex-col items-center p-24 bg-white w-[330px]">
           <h2 className="text-center text-20 font-semibold">Daily Hours</h2>
@@ -165,7 +208,7 @@ const Dashboard = () => {
           </h2>
           <table className="w-full table-auto border-collapse">
             <thead>
-              <tr className="bg-gray-light-active text-left">
+              <tr className="bg-gray-light-active text-left border-b border-blueGray-accent">
                 <th className="px-6 py-16 font-medium text-14 text-primary-gray">
                   Reason
                 </th>
@@ -179,18 +222,22 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="px-6 py-16 text-12">Medical Leave</td>
-                <td className="px-6 py-16 text-12">18 Oct 2024</td>
-                <td className="px-6 py-16 text-12">
-                  <Badge variant="orange">Pending</Badge>
-                </td>
-                <td className="px-6 py-16 text-12">
-                  <IconBtn variant="default">
-                    <DotsVertical />
-                  </IconBtn>
-                </td>
-              </tr>
+              {leaves.map(
+                ({ date, description, status: { label, variant } }, i) => (
+                  <tr key={i} className="border-b border-blueGray-accent">
+                    <td className="px-6 py-16 text-12">{description}</td>
+                    <td className="px-6 py-16 text-12">{date}</td>
+                    <td className="px-6 py-16 text-12">
+                      <Badge variant={variant}>{label}</Badge>
+                    </td>
+                    <td className="px-6 py-16 text-12">
+                      <IconBtn variant="default">
+                        <DotsVertical />
+                      </IconBtn>
+                    </td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
