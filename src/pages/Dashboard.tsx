@@ -4,9 +4,14 @@ import DocumentsIcon from "~/assets/icons/documents-linear.svg?react";
 import SunIcon from "~/assets/icons/tabler_sun-filled.svg?react";
 import OwlIcon from "~/assets/icons/light_owl-rounded.svg?react";
 import PlaneIcon from "~/assets/icons/clarity_plane-solid.svg?react";
+import ArrowLeft from "~/assets/icons/arrow-left.svg?react";
+import ArrowRight from "~/assets/icons/arrow-right.svg?react";
+import CalenderCheckIn from "~/assets/icons/calendar-check-in.svg?react";
+import CalenderCheckOut from "~/assets/icons/calendar-check-out.svg?react";
 import Calendar from "~/components/Calender";
 import EventCard from "~/components/EventCard";
 import RadialChart from "~/components/RadialChart";
+import TimeCard from "~/components/TimeCard";
 
 const Dashboard = () => {
   const activityItems = [
@@ -71,9 +76,34 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex gap-[16px]">
-        <div className="rounded-md flex gap-16 flex-col items-center p-24 bg-white w-[330px] h-[520px]">
+        <div className="rounded-md flex gap-16 flex-col items-center p-24 bg-white w-[330px]">
           <h2 className="text-center text-20 font-semibold">Daily Hours</h2>
           <RadialChart />
+          <div className="flex gap-4 w-full">
+            <button className="bg-blue-normal hover:bg-blue-normal-hover rounded-sm p-2 text-white">
+              <ArrowLeft />
+            </button>
+            <div className="flex-grow flex text-14 font-medium border border-gray-light-active rounded-sm bg-gray-light-hover items-center justify-center">
+              12 Dec 2024
+            </div>
+            <button className="bg-blue-normal hover:bg-blue-normal-hover rounded-sm p-2 text-white">
+              <ArrowRight />
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-8 w-full">
+            <TimeCard
+              icon={<CalenderCheckIn />}
+              time="10:09 AM"
+              title="Check in"
+              variant="success"
+            />
+            <TimeCard
+              icon={<CalenderCheckOut />}
+              time="07:09 PM"
+              title="Check out"
+              variant="danger"
+            />
+          </div>
         </div>
         <div className="flex-grow">
           <div className="grid grid-cols-3 gap-[16px]">

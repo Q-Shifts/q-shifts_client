@@ -67,6 +67,14 @@ export default {
         blueGray: {
           normal: "#6C6C7F",
           accent: "#6C6C7F1A"
+        },
+        green: {
+          normal: "#24AB28",
+          accent: "#EDF7EE"
+        },
+        deepOrange: {
+          normal: "#DF5C34",
+          accent: "#F7EEED"
         }
       },
       fontFamily: {
@@ -94,6 +102,7 @@ export default {
         xl: "32px",
         lg: "24px",
         md: "16px",
+        12: "12px",
         sm: "8px"
       },
       spacing: {
@@ -104,6 +113,7 @@ export default {
         26: "26px",
         18: "18px",
         16: "16px",
+        12: "12px",
         8: "8px",
         4: "4px"
       }
