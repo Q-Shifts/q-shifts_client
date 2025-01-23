@@ -40,7 +40,7 @@ const Calendar = () => {
   return (
     <div className="max-w-md">
       {/* Header */}
-      <div className="flex justify-between items-center px-8">
+      <div className="flex justify-between items-center px-8 mb-16">
         <h2 className="text-20 font-semibold text-gray-800">
           {format(currentDate, "dd MMMM yyyy")}
         </h2>
@@ -77,7 +77,7 @@ const Calendar = () => {
           return (
             <div key={index} onClick={() => handleSelectDate(day)}>
               <div
-                className={`flex justify-center items-center w-[40px] h-[40px] rounded-full text-12 select-none ${
+                className={`flex justify-center items-center w-[45px] h-[45px] rounded-full text-12 select-none ${
                   isActiveDay
                     ? "bg-blue-normal text-white"
                     : isToday
