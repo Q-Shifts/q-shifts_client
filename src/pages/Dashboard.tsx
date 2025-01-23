@@ -74,7 +74,7 @@ const Dashboard = () => {
   ] as const;
 
   return (
-    <>
+    <div className="flex flex-col gap-16">
       <div className="flex gap-[16px]">
         <div className="rounded-md flex gap-16 flex-col items-center p-24 bg-white w-[330px]">
           <h2 className="text-center text-20 font-semibold">Daily Hours</h2>
@@ -138,7 +138,27 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </>
+      <div className="grid grid-cols-2 gap-16">
+        <div className="rounded-md bg-white p-25">
+          <div className="flex justify-between">
+            <h2 className="text-20 font-semibold">Working Hours</h2>
+
+            <div className="flex gap-4">
+              <button className="bg-blue-light-hover rounded-sm p-2 text-blue-normal">
+                <ArrowLeft />
+              </button>
+              <div className="flex-grow flex text-14 font-medium border border-gray-normal rounded-sm text-gray-dark-active items-center justify-center px-8">
+                Oct 08 - Oct 17
+              </div>
+              <button className="bg-blue-light-hover rounded-sm p-2 text-blue-normal">
+                <ArrowRight />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md bg-white p-25"></div>
+      </div>
+    </div>
   );
 };
 
