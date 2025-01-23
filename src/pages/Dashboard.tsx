@@ -8,10 +8,13 @@ import ArrowLeft from "~/assets/icons/arrow-left.svg?react";
 import ArrowRight from "~/assets/icons/arrow-right.svg?react";
 import CalenderCheckIn from "~/assets/icons/calendar-check-in.svg?react";
 import CalenderCheckOut from "~/assets/icons/calendar-check-out.svg?react";
+import DotsVertical from "~/assets/icons/dots-vertical.svg?react";
 import Calendar from "~/components/Calender";
 import EventCard from "~/components/EventCard";
 import RadialChart from "~/components/RadialChart";
 import TimeCard from "~/components/TimeCard";
+import Badge from "~/components/Badge";
+import IconBtn from "~/components/IconBtn";
 
 const Dashboard = () => {
   const activityItems = [
@@ -80,15 +83,15 @@ const Dashboard = () => {
           <h2 className="text-center text-20 font-semibold">Daily Hours</h2>
           <RadialChart />
           <div className="flex gap-4 w-full">
-            <button className="bg-blue-normal hover:bg-blue-normal-hover rounded-sm p-2 text-white">
+            <IconBtn variant="primary">
               <ArrowLeft />
-            </button>
+            </IconBtn>
             <div className="flex-grow flex text-14 font-medium border border-gray-light-active rounded-sm bg-gray-light-hover items-center justify-center">
               12 Dec 2024
             </div>
-            <button className="bg-blue-normal hover:bg-blue-normal-hover rounded-sm p-2 text-white">
+            <IconBtn variant="primary">
               <ArrowRight />
-            </button>
+            </IconBtn>
           </div>
           <div className="grid grid-cols-2 gap-8 w-full">
             <TimeCard
@@ -144,19 +147,53 @@ const Dashboard = () => {
             <h2 className="text-20 font-semibold">Working Hours</h2>
 
             <div className="flex gap-4">
-              <button className="bg-blue-light-hover rounded-sm p-2 text-blue-normal">
+              <IconBtn variant="secondary">
                 <ArrowLeft />
-              </button>
+              </IconBtn>
               <div className="flex-grow flex text-14 font-medium border border-gray-normal rounded-sm text-gray-dark-active items-center justify-center px-8">
                 Oct 08 - Oct 17
               </div>
-              <button className="bg-blue-light-hover rounded-sm p-2 text-blue-normal">
+              <IconBtn variant="secondary">
                 <ArrowRight />
-              </button>
+              </IconBtn>
             </div>
           </div>
         </div>
-        <div className="rounded-md bg-white p-25"></div>
+        <div className="rounded-md bg-white pt-25">
+          <h2 className="text-20 font-semibold text-gray-darker px-25 mb-16">
+            Leaves
+          </h2>
+          <table className="w-full table-auto border-collapse">
+            <thead>
+              <tr className="bg-gray-light-active text-left">
+                <th className="px-6 py-16 font-medium text-14 text-primary-gray">
+                  Reason
+                </th>
+                <th className="px-6 py-16 font-medium text-14 text-primary-gray">
+                  Requested Date
+                </th>
+                <th className="px-6 py-16 font-medium text-14 text-primary-gray">
+                  Status
+                </th>
+                <th className="px-6 py-16 font-medium text-14 text-primary-gray"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="px-6 py-16 text-12">Medical Leave</td>
+                <td className="px-6 py-16 text-12">18 Oct 2024</td>
+                <td className="px-6 py-16 text-12">
+                  <Badge variant="orange">Pending</Badge>
+                </td>
+                <td className="px-6 py-16 text-12">
+                  <IconBtn variant="default">
+                    <DotsVertical />
+                  </IconBtn>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
