@@ -6,6 +6,7 @@ import OwlIcon from "~/assets/icons/light_owl-rounded.svg?react";
 import PlaneIcon from "~/assets/icons/clarity_plane-solid.svg?react";
 import Calendar from "~/components/Calender";
 import EventCard from "~/components/EventCard";
+import RadialChart from "~/components/RadialChart";
 
 const Dashboard = () => {
   const activityItems = [
@@ -70,8 +71,9 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex gap-[16px]">
-        <div className="rounded-md p-24 bg-white w-[330px] h-[520px]">
-          <h2>Daily Hours</h2>
+        <div className="rounded-md flex gap-16 flex-col items-center p-24 bg-white w-[330px] h-[520px]">
+          <h2 className="text-center text-20 font-semibold">Daily Hours</h2>
+          <RadialChart />
         </div>
         <div className="flex-grow">
           <div className="grid grid-cols-3 gap-[16px]">
