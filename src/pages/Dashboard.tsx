@@ -104,6 +104,9 @@ const Dashboard = () => {
               variant="danger"
             />
           </div>
+          <button className="py-16 text-16 font-semibold w-full text-white rounded-lg bg-blue-normal hover:bg-blue-normal-hover">
+            Check Out
+          </button>
         </div>
         <div className="flex-grow">
           <div className="grid grid-cols-3 gap-[16px]">
@@ -127,7 +130,7 @@ const Dashboard = () => {
 
           <div className="rounded-md bg-white flex gap-24 p-25 mt-16">
             <Calendar />
-            <div className="flex-grow">
+            <div className="flex-grow py-10">
               {events.map((e, i) => (
                 <EventCard {...e} className="mb-4" key={i} />
               ))}
