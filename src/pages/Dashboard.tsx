@@ -15,6 +15,7 @@ import RadialChart from "~/components/RadialChart";
 import TimeCard from "~/components/TimeCard";
 import Badge from "~/components/Badge";
 import IconBtn from "~/components/IconBtn";
+import WorkingHoursChart from "~/components/WorkingHoursChart";
 
 const Dashboard = () => {
   const activityItems = [
@@ -168,7 +169,7 @@ const Dashboard = () => {
                 </div>
                 <div className="flex flex-col justify-center">
                   <h3 className="text-14">{item.title}</h3>
-                  <strong className="text-20">{item.subtitle}</strong>
+                  <strong className="text-20 font-semibold text-dark-active">{item.subtitle}</strong>
                 </div>
               </div>
             ))}
@@ -201,6 +202,8 @@ const Dashboard = () => {
               </IconBtn>
             </div>
           </div>
+
+          <WorkingHoursChart />
         </div>
         <div className="rounded-md bg-white pt-25">
           <h2 className="text-20 font-semibold text-gray-darker px-25 mb-16">
