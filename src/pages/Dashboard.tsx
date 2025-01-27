@@ -169,7 +169,9 @@ const Dashboard = () => {
                 </div>
                 <div className="flex flex-col justify-center">
                   <h3 className="text-14">{item.title}</h3>
-                  <strong className="text-20 font-semibold text-dark-active">{item.subtitle}</strong>
+                  <strong className="text-20 font-semibold text-dark-active">
+                    {item.subtitle}
+                  </strong>
                 </div>
               </div>
             ))}
@@ -203,7 +205,17 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <WorkingHoursChart />
+          <WorkingHoursChart
+            data={[
+              { day: "Mon", start: 36000, end: 64800 },
+              { day: "Tue", start: 43200, end: 57600 },
+              { day: "Wed", start: 36000, end: 68400 },
+              { day: "Thu", start: 50400, end: 64800 },
+              { day: "Fri", start: 43200, end: 57600 },
+              { day: "Sat", start: 54000, end: 61200 },
+              { day: "Sun", start: 50400, end: 64800 }
+            ]}
+          />
         </div>
         <div className="rounded-md bg-white pt-25">
           <h2 className="text-20 font-semibold text-gray-darker px-25 mb-16">
